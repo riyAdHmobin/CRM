@@ -1,26 +1,32 @@
+version: '3'
+
 services:
 
   crm:
-    container_name: crm-l8
+    container_name: crm
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
       - ./laravel-app:/var/www/html
     ports:
-      - 8080:80
-    
+      - "8080:80"
+    depends_on:
+      - mysql_db
+
   mysql_db:
     image: mysql:latest
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: crm-l8
+      MYSQL_DATABASE: crm
     ports:
-      - 3306:3306
+      - "3306:3306"
 
   phpmyadmin:
     image: phpmyadmin:latest
     ports:
-      - 8081:80
+      - "8081:80"
     environment:
       - PMA_ARBITRARY=1
+    depends_on:
+      - mysql_db

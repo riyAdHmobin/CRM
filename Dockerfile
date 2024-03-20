@@ -1,5 +1,4 @@
-FROM php:8.2.0-apache
-WORKDIR /var/www/html
+FROM php:8.1.0-apache
 
 # Enable Mod Rewrite
 RUN a2enmod rewrite
@@ -21,7 +20,15 @@ RUN apt-get update -y && apt-get install -y \
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 # Install PHP Extensions
-RUN docker-php-ext-install gettext intl pdo_mysql gd
+RUN docker-php-ext-install gettext intl pdo_mysql
 
-RUN docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg \
+# Install GD extension with freetype and jpeg support
+RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j$(nproc) gd
+
+# Install zip extension
+RUN pecl install zip \
+    && docker-php-ext-enable zip
+
+# Set working directory
+WORKDIR /var/www/html
