@@ -26,6 +26,12 @@ class AdminController extends Controller
     }
 
     public function dashboard(){
-        return view('dashboard');
+        return view('main');
+    }
+
+    public function logout(){
+        \Session::flush();
+        \Auth::logout();
+        return redirect('/login');
     }
 }
