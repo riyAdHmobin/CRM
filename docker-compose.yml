@@ -1,7 +1,7 @@
 services:
 
   crm:
-    container_name: crm-l-8
+    container_name: crm-l8
     build:
       context: .
       dockerfile: Dockerfile
@@ -14,7 +14,7 @@ services:
     image: mysql:latest
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: crm-l-8
+      MYSQL_DATABASE: crm-l8
     ports:
       - 3306:3306
 
