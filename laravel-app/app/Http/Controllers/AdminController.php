@@ -26,12 +26,20 @@ class AdminController extends Controller
     }
 
     public function dashboard(){
-        return view('main');
+        return view('dashboard');
     }
 
     public function logout(){
         \Session::flush();
         \Auth::logout();
         return redirect('/login');
+    }
+
+    public function add_lead(){
+        return view('leads/add_lead');
+    }
+
+    public function manage_lead(){
+        return view('leads/manage_lead');
     }
 }

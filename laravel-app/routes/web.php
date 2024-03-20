@@ -20,4 +20,10 @@ Route::post('/login', [AdminController::class, 'login']);
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', [AdminController::class, 'dashboard']);
     Route::get('/logout', [AdminController::class, 'logout']);
+
+    Route::group(['prefix' => 'leads'], function(){
+        Route::get('/add-lead', [AdminController::class, 'add_lead']);
+        Route::get('/manage-lead', [AdminController::class, 'manage_lead']);
+    });
+
 });
