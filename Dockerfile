@@ -1,14 +1,14 @@
 FROM php:8.1.0-apache
+WORKDIR /var/www/html
 
-# Enable Mod Rewrite
+# Mod Rewrite
 RUN a2enmod rewrite
 
-# Install Linux Libraries
+# Linux Library
 RUN apt-get update -y && apt-get install -y \
     libicu-dev \
     libmariadb-dev \
-    unzip \
-    zip \
+    unzip zip \
     zlib1g-dev \
     libpng-dev \
     libjpeg-dev \
@@ -16,19 +16,11 @@ RUN apt-get update -y && apt-get install -y \
     libjpeg62-turbo-dev \
     libpng-dev 
 
-# Install Composer
+# Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Install PHP Extensions
-RUN docker-php-ext-install gettext intl pdo_mysql
+# PHP Extension
+RUN docker-php-ext-install gettext intl pdo_mysql gd
 
-# Install GD extension with freetype and jpeg support
-RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
+RUN docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j$(nproc) gd
-
-# Install zip extension
-RUN pecl install zip \
-    && docker-php-ext-enable zip
-
-# Set working directory
-WORKDIR /var/www/html
