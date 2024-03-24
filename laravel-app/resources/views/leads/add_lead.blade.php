@@ -9,46 +9,32 @@
 			</a>
 		</div> -->
 	<div class="row">
-		<div class="">
+		<form action="" method="POST">
+			@csrf
 			<div class="card">
-
-				<div class="card-header">
-					<h3>Lead Information</h3>
-				</div>
-
 				<div class="card-body">
+					<h3>Lead Information</h3>
 					<div class="row">
 						<div class="col-md-6">
 
 							<div style="margin-bottom: 15px;">
-								<input id="first_name" type="text" class="form-control" placeholder="First Name">
+								<h5 class="card-title mb-10">First Name<span class="text-danger">*</span></h5>
+								<input id="first_name" type="text" class="form-control" placeholder="First Name" name="first_name">
 							</div>
 
 							<div style="margin-bottom: 15px;">
-								<input id="last_name" type="text" class="form-control" placeholder="Last Name">
+								<h5 class="card-title mb-10">Email</h5>
+								<input id="email" type="text" class="form-control" placeholder="Email" name="email">
 							</div>
 
 							<div style="margin-bottom: 15px;">
-								<input id="title" type="text" class="form-control" placeholder="Title">
+								<h5 class="card-title mb-10">Title<span class="text-danger">*</span></h5>
+								<input id="title" type="text" class="form-control" placeholder="Title" name="title">
 							</div>
 
 							<div style="margin-bottom: 15px;">
-								<input id="title" type="text" class="form-control" placeholder="Company Name">
-							</div>
-
-						</div>
-						<div class="col-md-6">
-
-							<div style="margin-bottom: 15px;">
-								<input id="email" type="text" class="form-control" placeholder="Email">
-							</div>
-
-							<div style="margin-bottom: 15px;">
-								<input id="phone" type="text" class="form-control" placeholder="Phone">
-							</div>
-
-							<div style="margin-bottom: 15px;">
-								<select id="lead_status" class="form-select mb-3">
+								<h5 class="card-title mb-10">Lead Status</h5>
+								<select id="lead_status" class="form-select mb-3" name="lead_status">
 									<option selected>Lead Status</option>
 									<option>1</option>
 									<option>2</option>
@@ -57,8 +43,31 @@
 								</select>
 							</div>
 
+						</div>
+						<div class="col-md-6">
+
+							
+
 							<div style="margin-bottom: 15px;">
-								<select id="lead_source" class="form-select mb-3">
+								<h5 class="card-title mb-10">Last Name<span class="text-danger">*</span></h5>
+								<input id="last_name" type="text" class="form-control" placeholder="Last Name" name="last_name">
+							</div>
+
+							<div style="margin-bottom: 15px;">
+								<h5 class="card-title mb-10">Phone<span class="text-danger">*</span></h5>
+								<input id="phone" type="text" class="form-control" placeholder="Phone" name="phone">
+							</div>
+
+							<div style="margin-bottom: 15px;">
+								<h5 class="card-title mb-10">Company Name<span class="text-danger">*</span></h5>
+								<input id="title" type="text" class="form-control" placeholder="Company Name" name="company_name">
+							</div>
+
+							
+
+							<div style="margin-bottom: 15px;">
+								<h5 class="card-title mb-10">Lead Source</h5>
+								<select id="lead_source" class="form-select mb-3" name="lead_source">
 									<option selected>Lead Source</option>
 									<option>1</option>
 									<option>2</option>
@@ -70,26 +79,24 @@
 						</div>
 					</div>
 				</div>
-			</div>
-
-			<div class="card">
-				<div class="card-header">
+				<div class="card-body">
 					<h3>Address</h3>
-				</div>
-				<div class="card-body">
 					<div class="row">
 						<div class="col-md-6">
 
 							<div style="margin-bottom: 15px;">
-								<input type="text" class="form-control" placeholder="Building No.">
+								<h5 class="card-title mb-10">Building No.<span class="text-danger">*</span></h5>
+								<input type="text" class="form-control" placeholder="Building No." name="building_no">
 							</div>
 
 							<div style="margin-bottom: 15px;">
-								<input type="text" class="form-control" placeholder="Street">
+								<h5 class="card-title mb-10">State<span class="text-danger">*</span></h5>
+								<input type="text" class="form-control" placeholder="State" name="state">
 							</div>
 
 							<div style="margin-bottom: 15px;">
-								<input type="text" class="form-control" placeholder="City">
+								<h5 class="card-title mb-10">Zip Code<span class="text-danger">*</span></h5>
+								<input type="text" class="form-control" placeholder="Zip Code" name="zip_code">
 							</div>
 
 						</div>
@@ -97,49 +104,54 @@
 						<div class="col-md-6">
 
 							<div style="margin-bottom: 15px;">
-								<input type="text" class="form-control" placeholder="State">
+								<h5 class="card-title mb-10">Street<span class="text-danger">*</span></h5>
+								<input type="text" class="form-control" placeholder="Street" name="street">
 							</div>
 
 							<div style="margin-bottom: 15px;">
-								<input type="text" class="form-control" placeholder="Zip Code">
+								<h5 class="card-title mb-10">City<span class="text-danger">*</span></h5>
+								<input type="text" class="form-control" placeholder="City" name="city">
 							</div>
 
 							<div style="margin-bottom: 15px;">
-								<input type="text" class="form-control" placeholder="Country">
+								<h5 class="card-title mb-10">Country<span class="text-danger">*</span></h5>
+								<input type="text" class="form-control" placeholder="Country" name="country">
 							</div>
 
 						</div>
 					</div>
 				</div>
-			</div>
-
-			<div class="card">
-				<div class="card-header">
+				<div class="card-body">
 					<h3>Other Information</h3>
-				</div>
-				<div class="card-body">
 					<div class="row">
 						<div class="col-md-6">
 							<div style="margin-bottom: 15px;">
-								<textarea class="form-control" rows="3" placeholder="Note 1"></textarea>
+								<h5 class="card-title mb-10">Note 1</span></h5>
+								<textarea class="form-control" rows="3" placeholder="Note 1" name="note_1"></textarea>
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div style="margin-bottom: 15px;">
-								<textarea class="form-control" rows="3" placeholder="Note 2"></textarea>
+								<h5 class="card-title mb-10">Note 2</h5>
+								<textarea class="form-control" rows="3" placeholder="Note 2" name="note_2"></textarea>
 							</div>
 						</div>
 					</div>
 					<div class="row">
-						<div class="">
+						<div class="col-md-6">
 							<div class="d-grid gap-2 mt-3">
-								<button type="submit" name="submit" value="submit" href="index.html" class="btn btn-lg btn-primary">Add Lead</button>
+								<button type="submit" class="btn btn-lg btn-secondary">Cancel</button>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="d-grid gap-2 mt-3">
+								<button type="submit" name="submit" value="submit" class="btn btn-lg btn-primary">Save</button>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</form>
 
 		<!-- <div class="col-12 col-lg-6">
 			</div> -->
