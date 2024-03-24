@@ -5,7 +5,7 @@ setup:
 build:
 	docker-compose build --no-cache --force-rm
 stop:
-	docker-compose stop
+	docker-compose down
 up:
 	docker-compose up -d
 composer-update:
