@@ -35,7 +35,30 @@ class AdminController extends Controller
         return redirect('/login');
     }
 
-    public function add_lead(){
+    public function add_lead(Request $req){
+        $submit = $req['submit'];
+        if($submit == "submit"){
+            $req->validate([
+                'first_name' => 'required',
+                'last_name' => 'required',
+                // 'email' => '',
+                'phone' => 'required|min:11',
+                'title' => 'required',
+                'company_name' => 'required',
+                // 'lead_status' => '',
+                // 'lead_source' => '',
+
+                'building_no' => 'required',
+                'street' => 'required',
+                'state' => 'required',
+                'city' => 'required',
+                'zip_code' => 'required',
+                'country' => 'required',
+
+                // 'note_1' => '',
+                // 'note_2' => '',
+            ]);
+        }
         return view('leads/add_lead');
     }
 
