@@ -8,6 +8,8 @@ stop:
 	docker-compose down
 up:
 	docker-compose up -d
+live:
+	docker exec -it laravel-crm bash -c "php artisan serve"
 composer-update:
 	docker exec laravel-crm bash -c "composer update"
 data:
