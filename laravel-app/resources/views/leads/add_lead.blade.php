@@ -39,13 +39,15 @@
 							</div>
 
 							<div style="margin-bottom: 15px;">
+							@php
+							$lead_status = array('Quanlifications', 'Need Analysis', 'Proposal/Price Quote', 'Negotiations', 'Closed-Won', 'Closed-Lost');
+							@endphp
 								<h5 class="card-title mb-10">Lead Status</h5>
 								<select id="lead_status" class="form-select mb-3" name="lead_status">
-									<option selected>Lead Status</option>
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
+									<option selected value="none">Lead Status</option>
+									@foreach($lead_status as $single_status)
+									<option value="{{ $single_status }}">{{ $single_status }}</option>
+									@endforeach
 								</select>
 							</div>
 
@@ -81,13 +83,17 @@
 							
 
 							<div style="margin-bottom: 15px;">
+
+							@php
+							$lead_source = array('Advertising', 'Social Media', 'Direct Call', 'Search');
+							@endphp
+
 								<h5 class="card-title mb-10">Lead Source</h5>
 								<select id="lead_source" class="form-select mb-3" name="lead_source">
-									<option selected>Lead Source</option>
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
+									<option selected value="none">Lead Source</option>
+									@foreach($lead_source as $single_source)
+									<option value="{{ $single_source }}">{{ $single_source }}</option>
+									@endforeach
 								</select>
 							</div>
 
