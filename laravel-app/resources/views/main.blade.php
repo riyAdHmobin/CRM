@@ -38,7 +38,7 @@
 									</a>
 								</li>
 								<li class="sidebar-item">
-									<a class="sidebar-link" href="{{ url('leads/manage-lead') }}">
+									<a class="sidebar-link" href="{{ url('leads/manage-leads') }}">
 										<i class="align-middle" data-feather="user"></i> <span class="align-middle">Manage Leads</span>
 									</a>
 								</li>

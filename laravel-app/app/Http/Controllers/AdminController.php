@@ -90,6 +90,7 @@ class AdminController extends Controller
     }
 
     public function manage_leads(){
-        return view('leads/manage_leads');
+        $data['leads'] = LeadModel::all();
+        return view('leads/manage_leads')->with($data);
     }
 }
