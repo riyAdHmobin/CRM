@@ -26,6 +26,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/add-lead', [AdminController::class, 'add_lead']);
 
         Route::get('/manage-leads', [AdminController::class, 'manage_leads']);
+
+        Route::get('/delete-lead/{id}', [AdminController::class, 'delete_lead']);
     });
 
 });

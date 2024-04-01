@@ -93,4 +93,14 @@ class AdminController extends Controller
         $data['leads'] = LeadModel::all();
         return view('leads/manage_leads')->with($data);
     }
+
+    public function delete_lead($id){
+        $lead = LeadModel::find($id);
+        if($lead == ""){
+            return redirect('/leads/manage-leads');
+        }else{
+            $lead->delete();
+            return redirect('/leads/manage-leads');
+        }
+    }
 }

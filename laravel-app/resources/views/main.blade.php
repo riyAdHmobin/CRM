@@ -13,6 +13,7 @@
 		<title>Dashboard</title>
 		<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
 	</head>
 	<body>
 		<div class="wrapper">
@@ -238,6 +239,8 @@
 				</footer>
 			</div>
 		</div>
+
+
 		<script src="{{ asset('js/app.js') }}"></script>
 		<script>
 			document.addEventListener("DOMContentLoaded", function() {
