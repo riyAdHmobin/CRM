@@ -29,6 +29,7 @@
                         <td>{{ $single->lead_status }}</td>
                         <td>{{ $single->lead_source }}</td>
                         <td>
+							<a href="{{ url('/leads/view-lead/'.$single->id) }}" class="btn btn-info btn-sm"><i class="align-middle" data-feather="eye"></i> <span class="align-middle"></span></a>
                             <a href="{{ url('/leads/edit-lead/'.$single->id) }}" class="btn btn-primary btn-sm"><i class="align-middle" data-feather="edit"></i><span class="align-middle"></span></a>
                             <a href="{{ url('/leads/delete-lead/'.$single->id) }}" onclick="return confirm('Are You Sure You Want To Delete This Lead.')" class="btn btn-danger btn-sm"><i class="align-middle" data-feather="trash-2"></i> <span class="align-middle"></span></a>
                         </td>

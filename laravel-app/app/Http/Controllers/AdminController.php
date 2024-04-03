@@ -94,6 +94,15 @@ class AdminController extends Controller
         return view('leads/manage_leads')->with($data);
     }
 
+    public function view_lead($id, Request $req){
+        $lead = LeadModel::find($id);
+        if($lead == ""){
+            return redirect('/leads/manage-leads');
+        }
+        $data['lead_details'] = $lead;
+        return view('leads/view_lead')->with($data);
+    }
+
     public function edit_lead($id, Request $req){
         $lead = LeadModel::find($id);
         if($lead == ""){
